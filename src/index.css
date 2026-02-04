@@ -1,1 +1,36 @@
 @import "tailwindcss";
+
+@layer base {
+	:root {
+		--color-primary: #D95108;
+		--color-dark: #07080A;
+	}
+
+	body {
+		font-family: 'Poppins', sans-serif;
+	}
+}
+
+@layer utilities {
+	.bg-primary {
+		background-color: var(--color-primary);
+	}
+
+	.bg-dark {
+		background-color: var(--color-dark);
+	}
+
+	.text-primary {
+		color: var(--color-primary);
+	}
+
+	.neon-hover {
+		position: relative;
+		transition: all 0.3s ease;
+	}
+
+	.neon-hover:hover {
+		color: #ffffff;
+		text-shadow: 0 0 10px rgba(217, 81, 8, 0.8), 0 0 20px rgba(217, 81, 8, 0.6), 0 0 30px rgba(217, 81, 8, 0.4);
+	}
+}
