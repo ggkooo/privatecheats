@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
 export default function Header() {
-  const { user, isAuthenticated, logout } = useAuth()
+  const { user, isAuthenticated } = useAuth()
 
   return (
     <header className="bg-dark border-b border-slate-700 sticky top-0 z-50">
@@ -21,12 +21,12 @@ export default function Header() {
             <a href="#" className="text-gray-300 neon-hover font-medium">Contato</a>
             
             {isAuthenticated && user ? (
-              <button
-                onClick={logout}
-                className="text-gray-300 neon-hover font-medium"
+              <Link
+                to="/account"
+                className="text-gray-300 neon-hover font-medium hover:text-neon-pink transition-colors"
               >
                 👤 {user.name}
-              </button>
+              </Link>
             ) : (
               <Link to="/auth" className="text-gray-300 neon-hover font-medium">Login</Link>
             )}
